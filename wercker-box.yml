@@ -11,7 +11,7 @@ packages:
   - postgresql@9.3
   - postgis@2.1
 script: |
-  source provision.sh
+    source provision.sh
 env:
   WERCKER_POSTGRESQL_USERNAME: postgres
   WERCKER_POSTGRESQL_PASSWORD: wercker
