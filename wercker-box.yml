@@ -2,7 +2,7 @@ name: Postgres with Postgis
 version: 0.0.1
 type: service
 platform: ubuntu@12.04
-description: Postgresql + Postgis
+description: Postgresql with Postgis
 keywords:
   - postgresql
   - postgis
