@@ -1,0 +1,21 @@
+name: Postgresql + Postgis
+version: 0.0.1
+type: service
+platform: ubuntu@12.04
+description: Postgresql + Postgis
+keywords:
+  - postgresql
+  - postgis
+packages:
+  - postgresql-9.3-postgis-2.1
+script: |
+  echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -c | awk '{print $2}'`-pgdg main" >/etc/apt/sources.list.d/pgdg.list
+  sudo aptitude install -y postgresql-9.3 postgresql-9.3-postgis-2.1
+  echo "wercker" | passwd postgres --stdin
+  PGPASSWORD=werckerdb1 createdb -U postgres
+env:
+  WERCKER_POSTGRESQL_USERNAME: postgres
+  WERCKER_POSTGRESQL_PASSWORD: wercker
+  WERCKER_POSTGRESQL_PORT: 5432
+  WERCKER_POSTGRESQL_DATABASE: werckerdb1
+  WERCKER_POSTGRESQL_URL: postgres://postgres:wercker@$$HOST$$:5432/werckerdb1
