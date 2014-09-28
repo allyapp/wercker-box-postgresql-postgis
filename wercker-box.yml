@@ -1,4 +1,4 @@
-name: Postgres with Postgis
+name: postgres-postgis
 version: 0.0.1
 inherits: wercker/default@0.0.2
 type: service
