@@ -5,4 +5,4 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs
 sudo aptitude update -y
 sudo aptitude install -y  postgresql-9.3 postgresql-9.3-postgis-2.1
 echo "postgres:wercker" | sudo chpasswd
-PGPASSWORD=werckerdb1 createdb -U postgres
+sudo su postgres - -c '"CREATE DATABASE werckerdb1;" | psql'
