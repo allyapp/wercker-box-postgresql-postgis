@@ -1,6 +1,6 @@
 name: postgres-postgis
 version: 0.0.1
-inherits: wercker/default@0.0.2
+inherits: cristianbica/ubuntu14.04-rvm
 type: service
 platform: ubuntu@12.04
 description: Postgresql with Postgis
