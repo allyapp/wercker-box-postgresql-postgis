@@ -5,8 +5,8 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs
 sudo aptitude update -y
 sudo aptitude install -y  postgresql-9.3 postgresql-9.3-postgis-2.1
 echo "postgres:wercker" | sudo chpasswd
-sudo -u postgres psql -U postgres -d postgres -c "CREATE DATABASE werckerdb1;"
-sudo -u postgres psql -U postgres -d postgres -c "alter user postgres with password 'wercker';"
+sudo su postgres - -c 'echo "CREATE DATABASE werckerdb1;" | psql'
+sudo su postgres - -c 'echo "ALTER USER postgres WITH PASSWORD '"'"'wercker'"'"';" | psql'
 
 sudo sed -i "s/#listen_addresses = 'localhost'/listen_addresses = '*'/g" /etc/postgresql/*/main/postgresql.conf
 echo "host    all             all             0.0.0.0/0               md5" | sudo tee -a /etc/postgresql/*/main/pg_hba.conf
