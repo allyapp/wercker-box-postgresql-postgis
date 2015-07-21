@@ -1,5 +1,5 @@
 name: postgres-postgis
-version: 0.0.6
+version: 0.0.1
 inherits: cristianbica/ubuntu14.04-rvm@0.0.1
 type: service
 platform: ubuntu@12.04
